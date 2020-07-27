@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Cast{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="cast">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">MovieID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Job</th>
+                    <th scope="col">ordering</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in cast %}
+                <tr>
+                    <th scope="row">{{c['title']}}</th>
+                    <td>{{c['name']}}</td>
+                    <td>{{c['category']}}</td>
+                    <td>{{c['ordering']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

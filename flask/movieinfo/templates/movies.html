@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Movies{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="movies">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Released Year</th>
+                    <th scope="col">Runtime</th>
+                    <th scope="col">Average Rating</th>
+                    <th scope="col">Number of Votes</th>
+                    <th scope="col">Bechdel Test Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <tr>
+                    <th scope="row">{{movie['primaryTitle']}}</th>
+                    <td>{{movie['startYear']}}</td>
+                    <td>{{movie['runtimeMinutes']}}</td>
+                    <td>{{movie['averageRating']}}</td>
+                    <td>{{movie['numVotes']}}</td>
+                    <td>{{movie['bechdel']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

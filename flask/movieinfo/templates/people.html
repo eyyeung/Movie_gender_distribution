@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}People{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="people">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Popularity</th>
+                    <th scope="col">Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in people %}
+                <tr>
+                    <th scope="row">{{p['name']}}</th>
+                    <td>{{p['sex']}}</td>
+                    <td>{{p['popularity']}}</td>
+                    <td>{{p['category']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

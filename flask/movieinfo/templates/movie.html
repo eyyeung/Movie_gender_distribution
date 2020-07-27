@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Movies{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <article class='movie'>
+        <div>
+            <h1>{{movie['title']}}</h1>
+            <div class='about'>
+                <p>Released Year: {{ movie['startYear']}}</p>
+                <p>Runtime: {{movie['runtimeMinutes']}}</p>
+                <p>Average Rating: {{movie['averageRating']}}</p>
+                <p>Number of Votes: {{movie['numVotes']}}</p>
+                <p>Bechdel Test Result: {{movie['bechdel']}}</p>
+                <p>Number of People: {{movie['numPeople']}}</p>
+            </div>
+        </div>
+    </article>
+{% endblock %}
